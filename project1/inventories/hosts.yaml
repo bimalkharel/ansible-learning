@@ -1,0 +1,36 @@
+---
+ # comments start with space and hash
+all:
+    children:
+      # ans1, west, etc are all aliases
+      ans1:
+        hosts:
+          192.168.99.102
+      ans2:
+        hosts:
+          192.168.99.101
+      east:
+        hosts:
+          192.168.99.101
+      test:
+        children:
+          east
+      west:
+        children:
+          dc1:
+            hosts:
+              first:
+                ansible_host: 192.168.18.45
+                ssh_port: 54
+                user: svc-ansible
+          dc2:
+            hosts:
+              first:
+                ansible_port: 6895
+                ansible_host: 192.168.99.58
+      # these vars apply to all servers in the parent group
+      # in this case "west"  
+        vars:
+          proxy: none
+          gateway: 192.168.90.5
+...

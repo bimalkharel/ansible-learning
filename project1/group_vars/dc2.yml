@@ -1,0 +1,4 @@
+---
+ntp_server: ntp.mycompany.org
+datbase_server: db.mycompany.org
+...

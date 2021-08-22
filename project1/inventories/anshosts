@@ -1,0 +1,2 @@
+ans1 ansible_host=192.168.99.102
+ans2 ansible-host=192.168.99.101
